@@ -1,8 +1,9 @@
 {
 "createdOn": "10-10-2020",
-"title": "Quick notes on Git",
+"title": "Just another post",
 "postId": "100",
-"tags": ["tag1", "tag2"]
+"tags": ["tag1", "tag2"], 
+"description": "This is just another description for one more sample post"
 }
 /**content**/
 

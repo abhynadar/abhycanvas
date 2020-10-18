@@ -2,7 +2,8 @@
 "createdOn": "10-10-2020",
 "title": "Quick notes on Git",
 "postId": "101",
-"tags": ["tag1", "tag2"]
+"tags": ["Git", "Repository", "Repo"],
+"description": "I thought that I would put together quick notes on **Git**. Git is a file repository. As opposed to other repositories like SVN, Git thinks of its data more like a snapshot of a mini filesystem."
 }
 /**content**/
 

@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import "./Post.css";
 import { Header } from "../header/Header";
 import { parsePostContent } from "../../utils/postHelper";
-import * as posts2020 from "./internal/posts/year2020";
+import * as posts2020 from "./internal/year2020";
 
 import { PostType } from "../../types/post.types";
 
@@ -81,11 +81,24 @@ const Post = ({
     );
   }
 
+  const metadata = content.data.metadata;
+  const tagCount = metadata.tags.length - 1;
+
   return (
     <div>
       <Header />
       <div className="container">
-        <h2>{content.data.metadata.title}</h2>
+        <h1>{metadata.title}</h1>
+        <h5>{`${metadata.createdOn.toLocaleDateString()} - [`}
+          {
+            metadata.tags.map((tag, index) => {
+              return (<i>{tag}{index === tagCount ? "]" : ","} </i>);
+            })
+          }
+        </h5>
+        <a href="/">&lt;-- Back to home</a>
+        <br />
+        <br />
         <div>
           <ReactMarkdown source={content.data.content} />
         </div>
@@ -98,5 +111,5 @@ export { Post };
 
 /*
 Reference - https://stackoverflow.com/questions/42928530/how-do-i-load-a-markdown-file-into-a-react-component
-Markdown cheatsheet - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet 
+Markdown cheatsheet - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 */

@@ -22,7 +22,7 @@ const parsePostContent = (postContent: string): PostType | undefined => {
     const metaData = JSON.parse(parts[0].replace(/\n/g, " "));
     const content = parts[1];
     const parsedContent: PostType = {
-      metadata: { ...metaData },
+      metadata: { ...metaData, createdOn: new Date(metaData.createdOn) },
       content,
     };
     return parsedContent;
